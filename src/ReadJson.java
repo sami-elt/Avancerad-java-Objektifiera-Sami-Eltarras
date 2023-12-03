@@ -46,7 +46,7 @@ public class ReadJson {
                 //iterera igenom min array för att hämta värde för varje column för att kunna lägga in i min data arraylist.
                 ArrayList<String> rowsfill = new ArrayList<>();
                 for (int j = 0; j < arrJson.size(); j++) {
-                    /* Adds the data in record */
+                    /* Adds the data in col */
                     rowsfill.add(String.valueOf(col.get(arrJson.get(j))));
                 }
                 dataList.add(new ArrayList<>(rowsfill));
