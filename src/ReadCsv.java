@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ReadCsv {
     DefaultTableModel tableModel;
-    ArrayList<String[]> arr = new ArrayList<>();
+    ArrayList<String[]> arrCsv = new ArrayList<>();
 
     //konstruktor med parametrar för table
     ReadCsv(String filePaths, DefaultTableModel tableModel) {
@@ -17,7 +17,6 @@ public class ReadCsv {
         tableModel.setColumnCount(0);
 
         try {
-
             Scanner sc = new Scanner(new File(filePaths));
 
             //skapa header för table
@@ -32,7 +31,7 @@ public class ReadCsv {
             while (sc.hasNext()) {
                 String line = sc.nextLine();
                 String[] value = line.split(",");
-                arr.add(value);
+                arrCsv.add(value);
             }
             sc.close();
         } catch (Exception e) {
@@ -40,7 +39,7 @@ public class ReadCsv {
         }
 
         //använder addRow metoden för att få rätt antal rader hämtat från datan i min arraylist (arr)
-        for (String[] row : arr) {
+        for (String[] row : arrCsv) {
             tableModel.addRow(row);
         }
     }

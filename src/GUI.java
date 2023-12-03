@@ -30,12 +30,9 @@ public class GUI extends JFrame implements ActionListener {
         button.addActionListener(this);
         frame.add(button, BorderLayout.SOUTH);
 
-
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
-
-
     @Override
     public void actionPerformed(ActionEvent e) {
         // när man trycker på knappen startar man filechooser med genväg till src
@@ -53,7 +50,6 @@ public class GUI extends JFrame implements ActionListener {
            } else if (filePaths.toLowerCase().endsWith(".json")){
                new ReadJson(filePaths, tableModel);
            }
-
         }
     }
 }
